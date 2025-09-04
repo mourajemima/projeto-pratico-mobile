@@ -1,0 +1,38 @@
+# Arquivos e pastas específicas do Android Studio/IntelliJ
+*.iml
+.idea/
+.gradle
+local.properties
+
+# Pastas de build (não devem ir para o repositório)
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Configurações específicas do IDE
+.DS_Store
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# Arquivos de log
+*.log
+
+# Saídas de compilação
+*.apk
+*.ap_
+*.aab
+
+# Arquivos de dependências em cache
+.gradle/
+.gradle/*
+**/build/
+!gradle-wrapper.jar
+
+# Arquivos temporários do sistema operacional
+Thumbs.db
+ehthumbs.db
