@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
@@ -38,11 +39,18 @@ fun ProfileScreen(navController: NavController) {
             .fillMaxSize()
     ) {
         UserSection()
-        Spacer(
+        Spacer(modifier = Modifier.width(10.dp))
+        InformationSection()
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(
+            onClick = { navController.navigate(Screen.ProjectList.route) },
             modifier = Modifier
-                .width(10.dp)
-        )
-        InformationSection(navController)
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp)
+        ) {
+            Text(text = "Projetos")
+        }
+
     }
 }
 
@@ -92,7 +100,7 @@ fun UserSection() {
 }
 
 @Composable
-fun InformationSection(navController: NavController) {
+fun InformationSection() {
     Column(
         modifier = Modifier
             .background(Color.White)
@@ -181,27 +189,5 @@ fun InformationSection(navController: NavController) {
                     .padding(start = 10.dp)
             )
         }
-        Button(
-            onClick = {
-                navController.navigate(Screen.ProjectList.route)
-            }
-        ) {
-            Text(
-                text = "Projetos"
-            )
-        }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun UserSectionPreview() {
-    UserSection()
-}
-
-@Preview(showBackground = true)
-@Composable
-fun InformationSectionPreview() {
-    val navController = androidx.navigation.compose.rememberNavController()
-    InformationSection(navController)
 }

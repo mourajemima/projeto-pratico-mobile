@@ -31,7 +31,7 @@ fun AppNavigation() {
         ) { backStackEntry ->
             val projectId = backStackEntry.arguments?.getInt("projectId")
             if (projectId != null) {
-                ProjectDetailScreen(projectId = projectId)
+                ProjectDetailScreen(projectId = projectId, navController = navController)
             }
         }
     }
